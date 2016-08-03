@@ -1,0 +1,9 @@
+{
+  "folder_request_controler":"doado/private/controller/",
+  "app_url":"localhost/doado/",
+  "root_app":"localhost/doado/",
+  "class_path_list":[
+    "arm",
+    "/doado/private/"],
+  "folder_modules_config":"doado/private/configs/"
+}
