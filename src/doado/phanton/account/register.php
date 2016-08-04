@@ -1,4 +1,6 @@
+<?php
 
+?>
 <!DOCTYPE HTML>
 <!--
 	Phantom by HTML5 UP
