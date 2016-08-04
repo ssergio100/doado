@@ -8,10 +8,15 @@
  */
 class Account
 {
+
     public function register(){
-        $entity = new DMAccountEntity();
-        $vo = $entity->getVO();
-        dd($vo);
+
+       $login = ARMNavigation::getVar('login');
+       $password = ARMNavigation::getVar('password');
+        if($login){
+           return DMAccountModule::getInstance()->register();
+        }
+
     }
 
 }

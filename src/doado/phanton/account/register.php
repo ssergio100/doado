@@ -1,4 +1,4 @@
-<?php dd($Dados);?>
+
 <!DOCTYPE HTML>
 <!--
 	Phantom by HTML5 UP
@@ -48,21 +48,18 @@
             <!-- Form -->
             <section>
                 <h2>Form</h2>
-                <form method="post" action="#">
+                <form method="post" action="">
                     <div class="row uniform">
                         <div class="6u 12u$(xsmall)">
-                            <input type="text" name="nome" id="nome" value="" placeholder="Nome" />
+                            <input type="text" name="login" id="login" value="" placeholder="Login" />
                         </div>
-                        <div class="6u$ 12u$(xsmall)">
-                            <input type="email" name="email" id="email" value="" placeholder="Email" />
+                        <div class="6u 12u$(xsmall)">
+                            <input type="password" name="password" id="password" value="" placeholder="Senha" />
                         </div>
 
                         <div class="12u$">
-                            <textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
-                        </div>
-                        <div class="12u$">
                             <ul class="actions">
-                                <li><input type="submit" value="ENviar" class="special" /></li>
+                                <li><input type="submit" value="Enviar" class="special" /></li>
                                 <li><input type="reset" value="Reset" /></li>
                             </ul>
                         </div>

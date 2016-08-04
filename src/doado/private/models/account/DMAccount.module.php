@@ -11,4 +11,9 @@
 class DMAccountModule extends ARMBaseDMAccountModuleAbstract {
 	//put your changes and rewrited methods here
 	//Good developers always comment theirs code
+
+	public function register($login, $password){
+		$retorno = new ARMReturnResultVO();
+		return $retorno;
+	}
 }
