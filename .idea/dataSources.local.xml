@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="MySQL - doado@localhost" uuid="94041b60-798a-4aeb-a137-88d7dda4f220">
+      <secret-storage>master_key</secret-storage>
+      <user-name>root</user-name>
+      <schema-pattern>doado.*</schema-pattern>
+      <default-schemas>doado.*</default-schemas>
+    </data-source>
+  </component>
+</project>

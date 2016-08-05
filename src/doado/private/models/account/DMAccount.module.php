@@ -13,7 +13,13 @@ class DMAccountModule extends ARMBaseDMAccountModuleAbstract {
 	//Good developers always comment theirs code
 
 	public function register($login, $password){
-		$retorno = new ARMReturnResultVO();
-		return $retorno;
+		//$retorno = new ARMReturnResultVO();
+		$entity = DMAccountModelGateway::getInstance()->getEntity();
+		$vo = $entity->getVO();
+		$vo->login = $login;
+		$vo->password = $password;
+		$entity->fetchObject($vo);
+		$res = $entity->commit();
+		return $res;
 	}
 }
