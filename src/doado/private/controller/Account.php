@@ -22,6 +22,7 @@ class Account
            if($resultado->success){
                //ARMNavigation::redirect('');
                $this->success();
+               //self::success();
                //ARMNavigation::redirect(ARMNavigation::getLinkToController($this,"success",TRUE));
            }else{
                return $resultado;
@@ -37,6 +38,14 @@ class Account
         $login       = ARMNavigation::getVar('login');
         $password    = ARMNavigation::getVar('password');
         return DMAccountModule::getInstance()->register($login,$password);
+    }
+
+    public function listar(){
+        //$result = new ARMReturnResultVO();
+        return DMAccountModelGateway::getInstance()->getDAO()->selectAll();
+        //$result->result = $returnData->result;
+        //dd($resultData);
+        //return $result;
     }
 
 
