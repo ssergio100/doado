@@ -1,4 +1,10 @@
-<?php //d($result);?>
+<?php
+
+
+$result = $result->result->result[0];
+//dd($result);
+//echo $result->id;
+?>
 <!DOCTYPE HTML>
 
 <html>
@@ -43,19 +49,20 @@
 
             <!-- Form -->
             <section>
-                <h2>Form</h2>
-                <form method="post" action="">
+                <h2>Edição</h2>
+                <form method="post" action="<?php echo ARMNavigation::linkToController('account/register');?>">
+                    <input type="hidden" name="id" value="<?php if(isset($result->id))echo $result->id;?>"  />
                     <div class="row uniform">
                         <div class="6u 12u$(xsmall)">
-                            <input type="text" name="login" id="login" value="" placeholder="Login" />
+                            <input type="text" name="login" id="login" value="<?php if(isset($result->login))echo $result->login;?>" placeholder="Login" />
                         </div>
                         <div class="6u 12u$(xsmall)">
-                            <input type="password" name="password" id="password" value="" placeholder="Senha" />
+                            <input type="password" name="password" id="password" value="<?php if(isset($result->password))echo $result->password;?>" placeholder="Senha" />
                         </div>
 
                         <div class="12u$">
                             <ul class="actions">
-                                <li><input type="submit" value="Enviar" class="special" /></li>
+                                <li><input type="submit" value="ALterar" class="special" /></li>
                                 <li><input type="reset" value="Reset" /></li>
                             </ul>
                         </div>

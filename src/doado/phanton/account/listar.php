@@ -1,3 +1,6 @@
+<?php
+$result = $result->result->result
+?>
 <!DOCTYPE HTML>
 <!--
 	Phantom by HTML5 UP
@@ -25,7 +28,7 @@
 
             <!-- Logo -->
             <a href="index.html" class="logo">
-                <span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">Phantom</span>
+                <span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">Doado</span>
             </a>
 
             <!-- Nav -->
@@ -43,10 +46,7 @@
     <!-- Main -->
     <div id="main">
         <div class="inner">
-            <h1>Elements</h1>
-
-
-            <section>
+              <section>
                 <h2>Contas</h2>
                 <div class="table-wrapper">
                     <table>
@@ -55,78 +55,37 @@
                             <th>Id</th>
                             <th>Login</th>
                             <th>Password</th>
-                            <th colspan="3" style="text-align: center">Ações</th>
+                            <th colspan="4" style="text-align: center">Ações</th>
                         </tr>
                         </thead>
                         <tbody>
-                        <?php foreach($result->result->result as $val){ ?>
+                        <?php foreach($result as $val){
+                            $opt = ($val->active) ? '<i class="fa fa-times" aria-hidden="true" title="Clique para ativar"></i>':'<i class="fa fa-check" style="color:green" title="Clique para desativar" aria-hidden="true"></i>';
+                            ?>
                         <tr>
                             <td><?php echo $val->id;?></td>
                             <td><?php echo $val->login;?></td>
                             <td><?php echo $val->password;?></td>
-                            <td style="text-align: center"><a href="<?php echo ARMNavigation::getAppUrl("account/delete/id.".$val->id);?>">Excluir</a></td>
-                            <td style="text-align: center"><a href="<?php echo ARMNavigation::getAppUrl("account/disabled/id.").$val->id;?>">Desabilitar</a></td>
-                            <td style="text-align: center"><a href="<?php echo ARMNavigation::getAppUrl("account/reset/id.".$val->id);?>">Resetar</a></td>
+                            <td style="text-align: center"><a href="<?php echo ARMNavigation::getAppUrl("account/active/id.").$val->id;?>"><?php echo $opt;?></a></td>
+                            <td style="text-align: center"><a href="<?php echo ARMNavigation::getAppUrl("account/reset/id.".$val->id);?>" title="Resetar password"><i class="fa fa-key" aria-hidden="true"></i></a></td>
+                            <td style="text-align: center"><a href="<?php echo ARMNavigation::getAppUrl("account/edit/id.".$val->id);?>" title="Editar"><i class="fa fa-pencil" aria-hidden="true"></i></a></td>
+                            <td style="text-align: center"><a href="<?php echo ARMNavigation::getAppUrl("account/delete/id.".$val->id);?>" style="color:red" title="Deletar"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
 
                         </tr>
                         <?php } ?>
                         </tbody>
-                        <tfoot>
-                        <tr>
-                            <td colspan="2"></td>
-                            <td>100.00</td>
-                        </tr>
-                        </tfoot>
+
                     </table>
                 </div>
-
-
             </section>
-
             <!-- Buttons -->
-
-
             <!-- Form -->
-
-
-
-
         </div>
     </div>
 
     <!-- Footer -->
     <footer id="footer">
         <div class="inner">
-            <section>
-                <h2>Get in touch</h2>
-                <form method="post" action="#">
-                    <div class="field half first">
-                        <input type="text" name="name" id="name" placeholder="Name" />
-                    </div>
-                    <div class="field half">
-                        <input type="email" name="email" id="email" placeholder="Email" />
-                    </div>
-                    <div class="field">
-                        <textarea name="message" id="message" placeholder="Message"></textarea>
-                    </div>
-                    <ul class="actions">
-                        <li><input type="submit" value="Send" class="special" /></li>
-                    </ul>
-                </form>
-            </section>
-            <section>
-                <h2>Follow</h2>
-                <ul class="icons">
-                    <li><a href="#" class="icon style2 fa-twitter"><span class="label">Twitter</span></a></li>
-                    <li><a href="#" class="icon style2 fa-facebook"><span class="label">Facebook</span></a></li>
-                    <li><a href="#" class="icon style2 fa-instagram"><span class="label">Instagram</span></a></li>
-                    <li><a href="#" class="icon style2 fa-dribbble"><span class="label">Dribbble</span></a></li>
-                    <li><a href="#" class="icon style2 fa-github"><span class="label">GitHub</span></a></li>
-                    <li><a href="#" class="icon style2 fa-500px"><span class="label">500px</span></a></li>
-                    <li><a href="#" class="icon style2 fa-phone"><span class="label">Phone</span></a></li>
-                    <li><a href="#" class="icon style2 fa-envelope-o"><span class="label">Email</span></a></li>
-                </ul>
-            </section>
             <ul class="copyright">
                 <li>&copy; Untitled. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
             </ul>
