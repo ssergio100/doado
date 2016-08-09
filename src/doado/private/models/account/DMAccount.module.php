@@ -12,22 +12,26 @@ class DMAccountModule extends ARMBaseDMAccountModuleAbstract {
 	//put your changes and rewrited methods here
 	//Good developers always comment theirs code
 
-	public function register($login, $password,$id){
+	public function register($login, $password){
 		//$retorno = new ARMReturnResultVO();
-		if($id){
-			$sql = "UPDATE account SET password = '$password',login='$login',Active=0 WHERE id = $id";
-			$res = DMAccountModelGateway::getInstance()->getDAO()->query($sql);
-		}else {
+
 			$entity = DMAccountModelGateway::getInstance()->getEntity();
 			$vo = $entity->getVO();
 			$vo->login = $login;
 			$vo->password = $password;
 			$entity->fetchObject($vo);
 			$res = $entity->commit();
-			$ref_id = ($res->result->id)?$res->result->id:NULL;
-			$this->log($ref_id);
+			//$ref_id = ($res->result->id)?$res->result->id:NULL;
+			//$this->log($ref_id);
 
+		return $res;
+	}
+	public function update($login, $password,$id){
+		if($id){
+			$sql = "UPDATE account SET password = '$password',login='$login',Active=0 WHERE id = $id";
+			$res = DMAccountModelGateway::getInstance()->getDAO()->query($sql);
 		}
+
 		return $res;
 	}
 	public function delete($id){

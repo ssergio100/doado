@@ -1,6 +1,5 @@
 <?php
-
-
+//d($result);
 $result = $result->result->result[0];
 //dd($result);
 //echo $result->id;
